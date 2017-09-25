@@ -1,9 +1,12 @@
 var Greeter = React.createClass({
    render : function () {
+     var name = this.props.name;
+
       return (
            <div>
-               <h1> Hello Reacting...</h1>    
-           </div> 
+               <h1> Hello {name} Reacting...</h1>    
+               <p> This is the paragraph reacting to react... </p>
+           </div>      
       );
    }
 });
@@ -11,6 +14,8 @@ var Greeter = React.createClass({
 
 ReactDOM.render(
       // <h1> Hello Reacting</h1>,
-      <Greeter/>,
+      <Greeter name="David"/>,
       document.getElementById('app')
      );
+
+
