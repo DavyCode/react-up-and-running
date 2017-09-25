@@ -6,16 +6,29 @@ var Greeter = React.createClass({
                message: "Default message displaying"
          }  
    },
+
+   getInitialState: function () {
+        return {
+              name : this.props.name
+        };
+   },
+
      // prevent page refresh for submit button
    onButtonClick: function (e) {
       e.preventDefault();  
 
       var name = this.refs.name.value;
-      alert(name);
+
+      this.refs.name.value = "";
+
+      this.setState({
+            name : name
+      });
+      // alert(name);
    },
 
    render : function () {
-     var name = this.props.name;
+     var name = this.state.name;
      var message = this.props.message;
 
       return (
