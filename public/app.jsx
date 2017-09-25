@@ -1,29 +1,45 @@
 var Greeter = React.createClass({
-//    Default Props
+      //  Default Props
    getDefaultProps : function () {
          return {
-               name : "React Default"
+               name : "React Default",
+               message: "Default message displaying"
          }  
    },
+     // prevent page refresh for submit button
+   onButtonClick: function (e) {
+      e.preventDefault();  
 
+      var name = this.refs.name.value;
+      alert(name);
+   },
 
    render : function () {
      var name = this.props.name;
+     var message = this.props.message;
 
       return (
            <div>
                <h1> Hello {name} Reacting...</h1>    
-               <p> This is the paragraph reacting to react... </p>
-           </div>      
+               <p> {message} </p>
+                
+                
+               <form onSubmit={this.onButtonClick}>
+                 <input type="text" ref="name"/>
+                 <button>Submit</button>
+                </form>
+            </div>      
       );
    }
 });
 
-// var firstName = "Davido";
+
+var firstName = "Davido";
+var messageParagraph = " This is the paragraph reacting to react..."
 
 ReactDOM.render(
       // <h1> Hello Reacting</h1>,
-      <Greeter />,
+      <Greeter name={firstName} message ={messageParagraph}/>,
       document.getElementById('app')
      );
 
