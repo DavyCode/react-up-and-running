@@ -65,13 +65,20 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function greeter () {
-  document.write('From greeter in app js');
-}
+var greeter = __webpack_require__(1)
 
 greeter();
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+function greeter (){
+  document.write('Greeter says hi!!!!!!!!!!');
+}
+module.exports = greeter;
 
 /***/ })
 /******/ ]);
