@@ -1,5 +1,5 @@
 module.exports = {
-  entry : './public/app.js',
+  entry : './public/app.jsx',
   output : {
     path : __dirname,
     filename : './public/bundle.js'
@@ -15,7 +15,7 @@ module.exports = {
              presets :['react', 'es2015']
            },
            test: /\.jsx?$/,
-           exclude : /{node_modules|bower_components}/
+           exclude : /(node_modules|bower_components)/
        }
      ]
   }
