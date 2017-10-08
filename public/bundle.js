@@ -50,7 +50,7 @@
 	var ReactDOM = __webpack_require__(158);
 	var Greeter = __webpack_require__(159);
 
-	var firstName = "Davido";
+	var firstName = "Jenny";
 	var messageParagraph = "This is the paragraph reacting to react form GREETEr main props...";
 
 	ReactDOM.render(React.createElement(Greeter, { name: firstName, message: messageParagraph }), document.getElementById('app'));
@@ -19810,31 +19810,31 @@
 	var React = __webpack_require__(1);
 
 	var GreeterForm = React.createClass({
-	  displayName: 'GreeterForm',
+	    displayName: 'GreeterForm',
 
-	  onFormSubmit: function onFormSubmit(e) {
-	    e.preventDefault();
+	    onFormSubmit: function onFormSubmit(e) {
+	        e.preventDefault();
 
-	    var name = this.refs.name.value;
+	        var name = this.refs.name.value;
 
-	    if (name.length > 0) {
-	      this.refs.name.value = '';
-	      this.props.onNewName(name);
+	        if (name.length > 0) {
+	            this.refs.name.value = '';
+	            this.props.onNewName(name);
+	        }
+	    },
+
+	    render: function render() {
+	        return React.createElement(
+	            'form',
+	            { onSubmit: this.onFormSubmit },
+	            React.createElement('input', { type: 'text', ref: 'name' }),
+	            React.createElement(
+	                'button',
+	                null,
+	                'Submit'
+	            )
+	        );
 	    }
-	  },
-
-	  render: function render() {
-	    return React.createElement(
-	      'form',
-	      { onSubmit: this.onFormSubmit },
-	      React.createElement('input', { type: 'text', ref: 'name' }),
-	      React.createElement(
-	        'button',
-	        null,
-	        'Submit'
-	      )
-	    );
-	  }
 	});
 
 	module.exports = GreeterForm;

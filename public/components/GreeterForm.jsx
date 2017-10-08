@@ -11,7 +11,7 @@ var GreeterForm =React.createClass({
         this.props.onNewName(name);
     }
   },
-
+  
    render : function () {
         return (
                      <form onSubmit={this.onFormSubmit}>

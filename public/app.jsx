@@ -3,8 +3,8 @@ var ReactDOM = require('react-dom');
 var Greeter = require('Greeter');
 
 
-var firstName = "Davido";
-var messageParagraph = "This is the paragraph reacting to react form GREETEr main props..."
+var firstName = "Jenny";
+var messageParagraph = " GREETEr main props..."
 
 ReactDOM.render(
       <Greeter name={firstName} message ={messageParagraph}/>,
